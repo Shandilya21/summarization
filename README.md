@@ -17,7 +17,7 @@ Keras \
 numpy \
 pandas \
 json \
-elmo [Glove: Global Vector reprsentation of words] 
+glove [GloVe: Global Vector reprsentation of words] 
 
 # Download Links
 [glove] http://nlp.stanford.edu/data/glove.840B.300d.zip 
