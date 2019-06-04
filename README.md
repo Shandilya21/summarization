@@ -8,7 +8,7 @@ Compression Ratio is defined as No. of words in compressed sentences to the No. 
 
 # Result
 The results are coming to be quite state of the art:
-Compression ratio: 0.41 [5_win_model]
+Compression ratio: 0.41 [5_win_model] \\
 Compression ratio: 0.37 [3_win_model]
 
 
