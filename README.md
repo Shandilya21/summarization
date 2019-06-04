@@ -21,7 +21,6 @@ numpy \
 pandas \
 json \
 glove [Glove: Global Vector reprsentation of words] 
-{Chris Manning and Richard Socher}- Stanford University Pre-trained model
 
 
 
