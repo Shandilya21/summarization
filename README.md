@@ -10,10 +10,6 @@ The results are coming to be quite state of the art:\
 Compression ratio: 0.41 [5_win_model] \
 Compression ratio: 0.37 [3_win_model]
 
-
-# Contributors
-please feel free for the contribution in the model.
-
 # Requirement 
 Python 3.0+\
 Keras \
@@ -22,5 +18,5 @@ pandas \
 json \
 glove [Glove: Global Vector reprsentation of words] 
 
-
-
+# Contributors
+please feel free for the contribution in the model.
