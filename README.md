@@ -19,4 +19,4 @@ json \
 glove [Glove: Global Vector reprsentation of words] 
 
 # Contributors
-please feel free for the contribution in the model.
+please feel free for the contribution in the models.
