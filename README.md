@@ -19,7 +19,7 @@ json \
 elmo [Glove: Global Vector reprsentation of words] 
 
 # Download Links
-[glove] http://nlp.stanford.edu/data/glove.840B.300d.zip \
+[glove] http://nlp.stanford.edu/data/glove.840B.300d.zip 
 
-[datset_compressed]: https://drive.google.com/open?id=0B7FKpaFOwrQ4NUJkRWNBYW9HMUhRQThCVmRkMHVWenpvQU1z \
+[datset_compressed]: https://drive.google.com/open?id=0B7FKpaFOwrQ4NUJkRWNBYW9HMUhRQThCVmRkMHVWenpvQU1z 
 [dataset_original]:  https://drive.google.com/open?id=0B7FKpaFOwrQ4MXhlaHplbTdTRVdpYmJ2bjlvVWhUNGUxalJ3
