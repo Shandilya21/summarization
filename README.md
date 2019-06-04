@@ -16,11 +16,11 @@ Compression ratio: 0.29 [3_win_model]
 please feel free for the contribution in the model.
 
 # Requirement 
-Python 3.0+
-Keras
-numpy
-pandas
-json
+Python 3.0+,
+Keras,
+numpy,
+pandas,
+json,
 glove [Glove: Global Vector reprsentation of words] 
 {Chris Manning and Richard Socher}- Stanford University Pre-trained model
 
