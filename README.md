@@ -22,5 +22,5 @@ glove [GloVe: Global Vector reprsentation of words]
 # Download Links
 [glove] http://nlp.stanford.edu/data/glove.840B.300d.zip 
 
-[datset_compressed]: http://tiny.cc/0pss7y \
-[dataset_original]:  https://drive.google.com/open?id=0B7FKpaFOwrQ4MXhlaHplbTdTRVdpYmJ2bjlvVWhUNGUxalJ3
+[datset_Original]: http://tiny.cc/0pss7y \
+[dataset_compressed]: https://drive.google.com/open?id=0B7FKpaFOwrQ4MXhlaHplbTdTRVdpYmJ2bjlvVWhUNGUxalJ3
