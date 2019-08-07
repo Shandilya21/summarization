@@ -2,6 +2,7 @@
 A techniques which help to summarizes the information, we used the google compressed dataset for performing this task.
 We designed a model for sentence compression through deletion using the concept of Stacked LSTM. We introduce a simple model, which help to summarizes the text information into meaningful compressed sentence with minimal to no information loss. we evaluate the model both the automatic and human evaluation techniques.Automatic evaluation consists of calculation of BleU score and Rouge-4 score. whereas for human evaluation we taken informativeness and grammatically correct of the compressed sentences. the state of the art model has stated the compression ratio of 0.40. we calculated the compression ratio as follows:
 
+    The Official Journal "Predictive model for Sentence Compression through Deletion" code going to Published in Springer.
 
 Compression Ratio is defined as No. of words in compressed sentences to the No. of words in original sentences * 100
 
@@ -24,3 +25,6 @@ glove [GloVe: Global Vector reprsentation of words]
 
 [datset_Original]: http://tiny.cc/0pss7y \
 [dataset_compressed]: https://drive.google.com/open?id=0B7FKpaFOwrQ4MXhlaHplbTdTRVdpYmJ2bjlvVWhUNGUxalJ3
+
+      Note: This repository is not compelete right now, will update my all the work/code and paper soon.
+      
