@@ -6,6 +6,10 @@ We designed a model for sentence compression through deletion using the concept 
 
 Compression Ratio is defined as No. of words in compressed sentences to the No. of words in original sentences * 100
 
+<p align="center">
+  <img src="https://github.com/Shandilya21/SCN-Sentence-Compression-through-Deletion-using-Stacked-LSTM/blob/master/Untitled Diagram.png" alt="Compression-Algo"/>
+</p>
+
 
 # Result
 The results are coming to be quite state of the art:\
