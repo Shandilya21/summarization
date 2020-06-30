@@ -26,7 +26,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/Shandilya21/extractive_summarization">
-    <img src="assets/summarizer.png" alt="Logo" width="310" height="310">
+    <img src="assets/summarizer.png" alt="Logo" width="450" height="250">
   </a>
 
   <h3 align="center">Extractive Summarization Using Stacked RNN</h3>
@@ -93,9 +93,9 @@ pip install -r requirement.txt
 ```
 Before performing experiments, SET the config for the data path. In ```config.py``` Change the **DATA_PATH** to your data path location.
 
-**Dataset**: Data can be downloaded from here [**(Dataset)**](https://drive.google.com/file/d/0B7FKpaFOwrQ4NUJkRWNBYW9HMUhRQThCVmRkMHVWenpvQU1z/view) and [**(Dataset)**](https://drive.google.com/file/d/0B7FKpaFOwrQ4MXhlaHplbTdTRVdpYmJ2bjlvVWhUNGUxalJ3/view) Create and place the data inside the data/train folder. You may also create the test set to check the performance of the model from the split )(deifned in code).
+**Dataset**: Data can be downloaded from here [**(Raw Documents)**](https://drive.google.com/file/d/0B7FKpaFOwrQ4NUJkRWNBYW9HMUhRQThCVmRkMHVWenpvQU1z/view) and [**(Summary)**](https://drive.google.com/file/d/0B7FKpaFOwrQ4MXhlaHplbTdTRVdpYmJ2bjlvVWhUNGUxalJ3/view) Create and place the data inside the data/train folder. You may also create the test set to check the performance of the model from the split )(deifned in code).
 
-**Embeddings**: Download the pretrained weights from here [GloVe](http://nlp.stanford.edu/data/glove.840B.300d.zip). save the file inside the ```data/embeddings/glove```. if not feel free to save anywhere.
+**Embeddings**: Download the pretrained weights from here [(GloVe)](http://nlp.stanford.edu/data/glove.840B.300d.zip). save the file inside the ```data/embeddings/glove```. if not feel free to save anywhere.
 
 Before performing further steps, SET the config for the data path. In ```config.py``` Change the **DATA_PATH** to your data path location.
 
