@@ -1,5 +1,14 @@
+'''
+Aim: A prtotype to summarize the long phrase sentences
+Contributor: Arunav Shandilya
+			Sthita Pragyan Pujari
+
+This model is for 5 word window architecture (5 word at each time step)
+'''
+
 import numpy as np
 import struct
+import argparse
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import f1_score
 from keras.models import Sequential
@@ -9,30 +18,34 @@ from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 from keras.layers.embeddings import Embedding
 from keras.preprocessing import sequence
+from config import DATA_PATH
 np.random.seed(0)
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--glove_file', default='/data/embeddings/glove.840B.300d.txt')
+parser.add_argument('--original', default='/data/train/google-original-sentence.txt', help='raw input sentences')
+parser.add_argument('--compressed', default='/data/train/google-compressed-sentence.txt', help='target sentences')
+parser.add_argument('--epoch',type=int, default=5, help='number of iterations')
+arg = parser.parse_args()
 
 
 
 X=[]
-with open("google-original-sentence_lstm(1-9).txt",'r',encoding="utf8") as f:
+with open(DATA_PATH + arg.original,'r',encoding="utf8") as f:
 	for i in f:
 		if i=='\n':
 			continue
 		X.append(i.strip().split())
-	#X=np.array(X)
 
 all_words = set(w for words in X for w in words)
-#print(len(all_words))
 all_words.add("#123#")
-#print(len(all_words))
 
 Y=[]
-with open("google-compressed-sentence_lstm(1-9).txt",'r',encoding='utf8') as f:
+with open(DATA_PATH + arg.compressed,'r',encoding='utf8') as f:
     for i in f:
         if i=='\n':
             continue
         Y.append(i.strip().split())
-#print(X)
 Y1=[]
 for i in range(len(X)):
     a=set(Y[i])
@@ -43,10 +56,9 @@ for i in range(len(X)):
         else:
             Y1.append(0)
 
-
 glove= {}
 total_words=[]
-with open("glove.840B.300d.txt", "rb") as infile:
+with open(DATA_PATH + arg.glove_file, "rb") as infile:
     for line in infile:
         parts = line.split()
         word = parts[0].decode("utf8")
@@ -61,7 +73,6 @@ with open("glove.840B.300d.txt", "rb") as infile:
             continue
         glove[word]=np.ones((300,1))
     glove["#123#"]=np.zeros((300,1))
-print(len(glove))
 
 X1=[]
 for i in range(len(X)):
@@ -103,6 +114,6 @@ model.add(Dense(1))
 model.add(Activation('sigmoid'))
 model.compile(loss='binary_crossentropy', optimizer='Adadelta', metrics=['accuracy'])
 print(model.summary())
-model.fit(X_train, y_train, epochs=20, batch_size=16)
+model.fit(X_train, y_train, epochs=arg.epoch, batch_size=16)
 scores = model.evaluate(X_test, y_test, verbose=0)
 print(scores)

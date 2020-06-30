@@ -1,3 +1,4 @@
+'''
 Developer_="Arunav Pratap Shandeelya"
 _College_="IIIT Bhubaneswar"
 _Mentor_="Dr. Rakesh Chandra Balbantray"
@@ -5,7 +6,16 @@ _Project_="Sentence Compression Using LSTM Architecture of word Cateogrization"
 _Version_="1.0"
 _Status_="Under Development"
 
+Aim: A prtotype to summarize the long phrase sentences
+Contributor: Arunav Shandilya
+			Sthita Pragyan Pujari
+
+This model is for 3 word window architecture (3 word at each time step)
+'''
+
+import os
 import numpy as np
+import argparse
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import f1_score
 from keras.models import Sequential
@@ -15,11 +25,18 @@ from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 from keras.layers.embeddings import Embedding
 from keras.preprocessing import sequence
-
+from config import DATA_PATH
 np.random.seed(0)
 
+parser = argparse.ArgumentParser()
+parser.add_argument('--glove_file', default='/data/embeddings/glove.840B.300d.txt')
+parser.add_argument('--original', default='/data/train/google-original-sentence.txt', help='raw input sentences')
+parser.add_argument('--compressed', default='/data/train/google-compressed-sentence.txt', help='target sentences')
+parser.add_argument('--epoch',type=int, default=5, help='number of iterations')
+arg = parser.parse_args()
+
 X=[]
-with open("original.txt",'r',encoding="utf8") as f:
+with open(DATA_PATH + arg.original,'r',encoding="utf8") as f:
 	for i in f:
 		if i=='\n':
 			continue
@@ -31,7 +48,7 @@ all_words.add("#2103")
 
 glove= {}
 total_words=[]
-with open("glove.840B.300d.txt", "rb") as infile:
+with open(DATA_PATH + arg.glove_file, "rb") as infile:
     for line in infile:
         parts = line.split()
         word = parts[0].decode("utf8")
@@ -46,12 +63,10 @@ with open("glove.840B.300d.txt", "rb") as infile:
             continue
         glove[word]=np.ones((300,1))
     glove["#2103"]=np.zeros((300,1))
-#print(len(glove))
-
 
 
 Y=[]
-f3 = open("compressed.txt","r",encoding="utf8")
+f3 = open(DATA_PATH + arg.compressed,"r",encoding="utf8")
 for i in f3:
 	if i=='\n':
 		continue
@@ -84,7 +99,7 @@ tokenizer.fit_on_texts(list(all_words))
 X1=tokenizer.texts_to_sequences(X1)
 X1=pad_sequences(X1,maxlen=3,padding="post",value=0)
 
-X_train, X_test, y_train, y_test = `=0.3, shuffle=False)
+X_train, X_test, y_train, y_test = train_test_split(X1,Y1, test_size=0.3, shuffle=False)
 
 embedding_matrix = np.zeros((len(all_words), 300))
 for word, i in tokenizer.word_index.items():
@@ -104,5 +119,3 @@ print(model.summary())
 model.fit(X_train, y_train, epochs=10, batch_size=16)
 scores = model.evaluate(X_test, y_test, verbose=0)
 print (scores)
-
-
