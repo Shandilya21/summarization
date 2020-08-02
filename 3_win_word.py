@@ -8,7 +8,6 @@ _Status_="Under Development"
 
 Aim: A prtotype to summarize the long phrase sentences
 Contributor: Arunav Shandilya
-			Sthita Pragyan Pujari
 
 This model is for 3 word window architecture (3 word at each time step)
 '''
